@@ -13,8 +13,26 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->integer('number');
+            $table->integer('cost');
             $table->timestamps();
+
+            $table->foreignId('tour_id')
+            ->nullable()
+            ->constrained()
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
+
+            $table->foreignId('user_id')
+            ->nullable()
+            ->constrained()
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
+
+            
         });
+
+        
     }
 
     /**
