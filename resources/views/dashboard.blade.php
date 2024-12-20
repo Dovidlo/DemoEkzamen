@@ -9,7 +9,20 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    <div class="py-12">
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                            @foreach ($tours as $tour)
+                            <div class="flex flex-col bg-white px-5 py-6 justify-between pb-6">
+                                <div class="flex justify-between">
+                                    <img src="{{ Vite::asset('resources/images/tour1.jpg') }}" alt="">
+                                    <p>{{ $tour->title }}</p>
+                                    <p>{{ $tour->date }}</p>
+                                    <p>{{ $tour->price }}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

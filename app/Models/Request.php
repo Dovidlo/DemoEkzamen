@@ -10,4 +10,5 @@ class Request extends Model
     use HasFactory;
 
     protected $guarded = [];
+
 }

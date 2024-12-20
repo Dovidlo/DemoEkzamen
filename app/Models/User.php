@@ -29,6 +29,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function fullName(){
+        return $this->name.' '.$this->surename;
+    }
+
     /**
      * The attributes that should be cast.
      *

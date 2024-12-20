@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TourController;
+use App\Models\Tour;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/tour/{id}', [TourController::class, 'show'])->name('tour.show');
+Route::get('/tours', [TourController::class, 'index'])->name('tours.index');
+Route::get('/', [TourController::class, 'index'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
